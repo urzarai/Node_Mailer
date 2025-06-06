@@ -1,22 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Contact Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="form-container">
+  <section class="contact-section">
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form-container">
         <form class="contact-form">
-            <h2>CONTACT US</h2>
-            <input type="text" name="Name" id="name" placeholder="Enter Full Name"></br>
-            <input type="email" name="Email" id="email" placeholder="Enter your Email-ID"></br>
-            <input type="text" name="Subject" id="subject" placeholder="Enter Subject"></br>
-            <textarea id="message" cols="30" rows="10" placeholder="Enter message"></textarea></br>
-            <input type="submit" value="Send Message" class="submit" >
+          <h2>CONTACT US</h2>
+          <input type="text" name="name" id="name" placeholder="Enter Full Name" required>
+          <input type="email" name="email" id="email" placeholder="Enter your Email-ID" required>
+          <input type="text" name="subject" id="subject" placeholder="Enter Subject" required>
+          <textarea id="message" name="message" rows="6" placeholder="Enter message" required></textarea>
+          <input type="submit" value="Send Message" class="submit">
+          <p class="form-status" id="form-status"></p>
         </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Urza Rai</h2>
+        <div class="info-item">
+          <strong>Email: </strong>
+          <a href="mailto:raiurza@gmail.com">raiurza@gmail.com</a>
+        </div>
+        <div class="info-item">
+          <strong>Phone: </strong>
+          <a href="tel:+919718047132">+91 971804 7132</a>
+        </div>
+        <div class="info-item">
+          <strong>Location: </strong>Pune, Maharashtra
+        </div>
+        <div class="info-item socials">
+          <strong>Social: </strong>
+          <a href="https://linkedin.com/in/urza-rai" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/urzarai" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
     </div>
-    <script src="app.js"></script>
+  </section>
+  <script>
+    // Example client-side form handler (optional)
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('form-status').textContent = 'Message sending (demo only)...';
+      setTimeout(() => {
+        document.getElementById('form-status').textContent = 'Message sent! (demo)';
+        this.reset();
+      }, 1200);
+    });
+  </script>
 </body>
 </html>
